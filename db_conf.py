@@ -7,9 +7,9 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 
 load_dotenv(".env")
 
-SQLALCHEMY_BASE_URL  = os.environ["DATABASE_URL"]
+SQLALCHEMY_DATABASE_URL  = os.environ["DATABASE_URL"]
 engine = create_engine(
-    SQLALCHEMY_BASE_URL,
+    SQLALCHEMY_DATABASE_URL,
 )
 
 db_session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
